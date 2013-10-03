@@ -1,0 +1,11 @@
+.red { color: red }
+.green { color: green }
+
+.reveal section ul li {
+  padding-bottom: 10px;
+}
+
+.reveal section ol li {
+  padding-bottom: 15px;
+}
+
