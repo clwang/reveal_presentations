@@ -72,6 +72,7 @@
             <br />
             <br />
             <a href="http://www.webpagetest.org/result/131016_K3_SW9/" target='_blank'>Lets see how <span class='underline'>ThredUP</span> does!</a>
+            <a href="http://www.webpagetest.org/result/131017_SK_QCG/" target='_blank'>Shop</a>
           </section>
 
           <section>
@@ -101,28 +102,26 @@
             <br />
             <img src="http://i.imgur.com/4TTEeSf.gif" alt="bottom" />
           </section>
+
           <section>
             <h2>Suggested Improvements for Web</h2>
             <ul>
-              <li>Remove any third party widgets we don't need</li>
-              <li>First Time to Byte can be pretty hefty</li>
-              <li>Keep the requests as few and as small as possible (ideally less than 1500 bytes)</li>
-              <li>Compress Images further</li>
-                <ul>
-                  <li>You should see a benefit for any image file that can be reduced by 25 bytes or more</li>
-                </ul>
-
+              <li class="fragment">Remove any third party widgets we don't need</li>
+              <li class="fragment">First Time to Byte can be pretty hefty</li>
+              <li class="fragment">Keep the requests as few and as small as possible(ideally less than 1500bytes)</li>
+              <li class="fragment">Compress Images further</li>
+            </ul>
+            <aside class="notes">You should see a benefit for any image file that can be reduced by 25 bytes or more</aside>
           </section>
           <section>
-            <h2>Things to think about for Mobile</h2>
+            <h2>Things to think about for Mobile Web</h2>
             <ul>
-              <li>Load images through CSS background-images when possible</li>
-              <li>Less HTTP requests</li>
-              <li>Widgets are super expensive</li>
-              <li>Less JS is better</li>
+              <li class="fragment">Load images through CSS background-images when possible</li>
+              <li class="fragment">Less HTTP requests</li>
+              <li class="fragment">Widgets are super expensive</li>
+              <li class="fragment">Less JS is better</li>
             </ul>
             <img src="http://cdn.sheknows.com/articles/2013/08/JULES/GIFS/yGk9W.gif" alt="" />
-
           </section>
 
           <section>
@@ -141,7 +140,6 @@
             <br />
             <img src="http://s3-ec.buzzfed.com/static/enhanced/webdr02/2012/11/8/18/anigif_enhanced-buzz-31182-1352416174-1.gif" alt="" />
           </section>
-
           <section>
             <h2>Problem:</h2>
             <br />
@@ -161,25 +159,23 @@
             <h2>Old School Instrumentation</h2>
             <pre>
               <code>
-def print_duration(name)
-  start = Time.now
-  result = yield
-  total = (Time.now - start) * 1000
-  puts "#{name}: #{total.to_i}ms"
-  result
-end
+              def print_duration(name)
+                start = Time.now
+                result = yield
+                total = (Time.now - start) * 1000
+                puts "#{name}: #{total.to_i}ms"
+                result
+              end
 
-alias_method :some_method_old, :some_method
+              alias_method :some_method_old, :some_method
 
-def some_method(*args, &blk)
-  print_duration("something") do
-    some_method(*args, &blk)
-  end
-end
-</code>
-
+              def some_method(*args, &blk)
+                print_duration("something") do
+                  some_method(*args, &blk)
+                end
+              end
+              </code>
             </pre>
-
           </section>
 
           <section>
@@ -215,7 +211,6 @@ end
           <img src="http://i50.photobucket.com/albums/f324/ann1024/DevelopersAreBornBrave_Small.jpg" alt="" />
         </section>
       </div>
-
     </div>
 
     <script src="lib/js/head.min.js"></script>
