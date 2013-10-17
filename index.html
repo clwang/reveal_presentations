@@ -125,17 +125,68 @@
           </section>
 
           <section>
+            <h2>Problem:</h2>
+            <br />
+            <h3>Run Away CPU with a Ruby Process</h3>
           </section>
 
           <section>
+            <h2>Solution:</h2>
+            <ul>
+              <li>Ruby 2.0's dtrace probes</li>
+              <li>rbtrace gem</li>
+            </ul>
           </section>
 
           <section>
+            <h2>Old School Instrumentation</h2>
+            <pre>
+              <code>
+def print_duration(name)
+  start = Time.now
+  result = yield
+  total = (Time.now - start) * 1000
+  puts "#{name}: #{total.to_i}ms"
+  result
+end
+
+alias_method :some_method_old, :some_method
+
+def some_method(*args, &blk)
+  print_duration("something") do
+    some_method(*args, &blk)
+  end
+end
+</code>
+
+            </pre>
+
+          </section>
+
+          <section>
+            <h2>Benchmarking</h2>
+            <p>Tool used to record measurements</p>
+            <p>Run your code n-times and see how long it takes</p>
           </section>
 
         </section>
 
         <section>
+          <section>
+            <h2>Rack Mini Profiler</h2>
+            <p>Lets just dig into it!</p>
+          </section>
+
+          <section>
+            <h2>What we should be looking out for?</h2>
+            <ol>
+              <li>Look between the gaps</li>
+              <li>Queries that shouldn't run</li>
+              <li>Queries that are taking too long</li>
+              <li>Too much data in the select</li>
+              <li>Repeated Queries (n+1)</li>
+            </ol>
+          </section>
         </section>
 
         <section>
