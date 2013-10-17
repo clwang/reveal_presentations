@@ -5,3 +5,11 @@
 .bold {
   font-weight: bold;
 }
+
+.reveal ol li { 
+  padding-bottom: 20px;
+}
+
+.reveal ul li { 
+  padding-bottom: 20px;
+}
